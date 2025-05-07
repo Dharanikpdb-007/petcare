@@ -14,7 +14,7 @@ class KnowledgeBase:
     
     def load_data(self):
         """Load all the knowledge base data from JSON files."""
-        # Load primary knowledge base
+    
         with open('dog_care_data.json', 'r') as file:
             self.data = json.load(file)
             
@@ -39,7 +39,7 @@ class KnowledgeBase:
         Returns:
             list: A list of category names
         """
-        # Filter out utility categories
+      
         main_categories = [cat for cat in self.data.keys() 
                           if cat not in ['general_responses', 'breeds']]
         return main_categories
@@ -57,13 +57,13 @@ class KnowledgeBase:
         results = []
         query = query.lower()
         
-        # Search through all categories
+      
         for category, category_data in self.data.items():
-            # Skip utility categories for generic searches
+          
             if category in ['general_responses']:
                 continue
                 
-            # If category is dictionary, search through its keys and values
+       
             if isinstance(category_data, dict):
                 for key, value in category_data.items():
                     if query in key.lower() or (isinstance(value, str) and query in value.lower()):

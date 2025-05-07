@@ -7,7 +7,6 @@ import sys
 import time
 import random
 
-# ANSI color codes
 COLORS = {
     "red": "\033[91m",
     "green": "\033[92m",
@@ -48,9 +47,9 @@ def print_typing_effect(text, min_delay=0.01, max_delay=0.05):
     for char in text:
         sys.stdout.write(char)
         sys.stdout.flush()
-        # Vary the typing speed to make it more realistic
+        
         delay = random.uniform(min_delay, max_delay)
-        # Add larger pauses after sentence endings
+      
         if char in ['.', '!', '?', '\n']:
             delay = delay * 3
         time.sleep(delay)

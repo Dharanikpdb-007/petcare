@@ -65,7 +65,7 @@ class DogCareBot:
                 if topic in query:
                     return info
         
-       s
+       
         response = self._keyword_matching(query)
         if response:
             return response
